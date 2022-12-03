@@ -2,7 +2,17 @@ pipeline{
 
 agent any
 
+tools {
+    maven 'maven-3.6.3'
+  }
+
 stages{
+
+stage("compile"){
+    steps{
+      sh 'mvn clean compile'
+    }
+  }
   
   stage("build"){
     steps{
